@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "username": "patrickstar",
+        "hashed_password": "$$2y$10$/fmAmCtfNYSh.rZUE4fS/u9Nbcqy3lcEhMc.uqE9pS2Ee5uxMkOJO",
+        "email": "nothisispatrick@gmail.com"
+    },
+    {
+        "id": 2,
+        "username": "pawneegoddess",
+        "hashed_password": "$$2y$10$PMhRYQPFlYV6m7XQgau8fONffqT.2tAsSQ.i20quxUl6/OCHXsAV2",
+        "email": "pawneegoddess@gmail.com"
+    },
+    {
+        "id": 3,
+        "username": "tigerking",
+        "hashed_password": "$$2y$10$MKbDjT6eUIZDbcRL.uLUMe1.Au2Y1.NyhN7uFwqwHi872NIpMuCZm",
+        "email": "joenotexotic@gmail.com"
+    },
+    {
+        "id": 4,
+        "username": "alien_believer",
+        "hashed_password": "$$2y$10$FtEq/IwLoNXXJyP3xOxCIe2brpuTy6X8a/yHrQqi.iGKl/pwX0jcS",
+        "email": "emailisevil@gmail.com"
+    },
+    {
+        "id": 5,
+        "username": "wolfpackof1",
+        "hashed_password": "$$2y$10$sjkSSx39VWLasLlo8YPYWOwJm1Z5gkOvDxoeqkVF/ijOIOscC74Yi",
+        "email": "alangarnerh@gmail.com"
+    }
+]
