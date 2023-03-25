@@ -5,7 +5,7 @@ const listedItemSchema = new Schema({
     iconURL: String,
     title: String,
     description: String,
-    createdAt: { Date, default: Date.now },
+    createdAt: { Date, default: Date },
     messages: [{ type: mongoose.Types.ObjectId, ref: "Message" }],
 });
 

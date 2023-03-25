@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const messageSchema = new Schema({
     content: String,
-    createdAt: { Date, default: Date.now },
+    createdAt: { Date, default: Date },
     userID: mongoose.ObjectId,
     itemID: { type: mongoose.Types.ObjectId, ref: "ListedItem" },
 });
