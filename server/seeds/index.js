@@ -15,10 +15,10 @@ db.once("open", async () => {
     await seedUsers();
 
     console.log("//////////////SEEDING MESSAGE DATA///////////");
-    await Message.insertMany(seedMessages);
+    await seedMessages();
 
     console.log("//////////////SEEDING ITEM DATA//////////////");
-    await ListedItem.insertMany(seedListedItems);
+    await seedListedItems();
 
     console.log("Finished!");
     process.exit(0);
