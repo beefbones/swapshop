@@ -31,6 +31,19 @@ router.post("/", async (req, res) => {
     }
 });
 
+router.put("/", async (req, res) => {
+    try {
+        const updatedUser = await User.findByIdAndUpdate(req.body._id, req.body, { returnDocument: "after" });
+        if (updatedUser) {
+            res.send(`${updatedUser.username} (id: ${updatedUser._id}) updated successfully!`);
+        } else {
+            throw new Error(`No user found by id ${req.body._id}!`);
+        }
+    } catch (err) {
+        res.status(400).send(`Error: ${err.message}`);
+    }
+});
+
 router.delete("/", async (req, res) => {
     try {
         const deletedUser = await User.findByIdAndDelete(req.body._id);
