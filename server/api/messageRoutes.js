@@ -1,7 +1,5 @@
 const router = require("express").Router();
 const { Message } = require("../models");
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
 
 router.get("/", async (req, res) => {
     try {
