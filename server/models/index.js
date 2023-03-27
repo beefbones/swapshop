@@ -1,3 +1,5 @@
-const { User } = require("./User");
+const User = require("./User");
+const Message = require("./Message");
+const ListedItem = require("./ListedItem");
 
-module.exports = { User };
+module.exports = { User, Message, ListedItem };
