@@ -27,6 +27,11 @@ const typeDefs = gql`
         messages: [Message]
     }
 
+    type Auth {
+        token: ID!
+        user: User
+    }
+
     type Query {
         users: [User]
         user(_id: ID!): User
@@ -34,6 +39,7 @@ const typeDefs = gql`
         message(_id: ID!): Message
         listedItems: [ListedItem]
         listedItem(_id: ID!): ListedItem
+        me: User
     }
 
     type Mutation {
