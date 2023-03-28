@@ -29,6 +29,15 @@ const typeDefs = gql`
 
     type Query {
         users: [User]
+        user(_id: ID!): User
+        messages: [Message]
+        message(_id: ID!): Message
+        listedItems: [ListedItem]
+        listedItem(_id: ID!): ListedItem
+    }
+
+    type Mutation {
+        
     }
 `;
 
