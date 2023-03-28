@@ -1,5 +1,3 @@
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
 const { User } = require("../models");
 
 const userData = [
@@ -36,15 +34,7 @@ const userData = [
 ];
 
 const seedUsers = async () => {
-    const hashedUserData = await Promise.all(
-        userData.map(async (data) => {
-            data.hashedPass = await bcrypt.hash(data.password, saltRounds);
-            delete data.password;
-            return data;
-        })
-    );
-
-    await User.insertMany(hashedUserData);
+    await User.insertMany(userData);
 };
 
 module.exports = seedUsers;

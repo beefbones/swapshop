@@ -36,7 +36,9 @@ const resolvers = {
         },
     },
 
-    Mutation: {},
+    Mutation: {
+        addUser: async(parent),
+    },
 };
 
 module.exports = resolvers;

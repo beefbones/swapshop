@@ -4,7 +4,7 @@ const typeDefs = gql`
     type User {
         _id: ID
         username: String
-        hashedPass: String
+        password: String
         email: String
         listedItems: [ListedItem]
         messages: [Message]
@@ -43,7 +43,10 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        
+        addUser(username: String!, password: String!, email: String!): Auth
+        login(email: String!, password: String!): Auth
+        addListedItem(title: String!, description: String!, iconURL: String!): ListedItem
+        addMessage(content:String!, userID: ID!, itemID: ID!)
     }
 `;
 
