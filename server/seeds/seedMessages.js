@@ -10,7 +10,7 @@ const messageData = [
     },
     {
         _id: "642223d230dc7414bffa17b5",
-        content: "Would love to swap for the converse. Any interest in swapping for a backpack?",
+        content: "Would love to swap for the converse. Any interest in swapping for a coffee maker?",
         createdAt: new Date(2023, 2, 19, 10, 10, 3, 6),
         userID: "641f11998be4cb11c189e2ea",
         itemID: "6422243fcab6893c93fc6bbe"
@@ -24,9 +24,16 @@ const messageData = [
     },
     {
         _id: "642223e43ffc5930f7f20f07",
-        content: "That's perfect! Swapping my sunglasses for your satchel sounds like a great idea!",
+        content: "That's perfect! Swapping my belt for your satchel sounds like a great idea!",
         createdAt: new Date(2023, 2, 25, 21, 15, 7, 7),
         userID: "641f11c0a345f90ada38e096",
+        itemID: "6422244f146ccda633fd22af"
+    },
+    {
+        _id: "642370b3a693ff1406a2eee4",
+        content: "Swap your satchel for a belt???",
+        createdAt: new Date(2023, 2, 25, 21, 15, 7, 7),
+        userID: "641f11998be4cb11c189e2ea",
         itemID: "6422244f146ccda633fd22af"
     },
 ];

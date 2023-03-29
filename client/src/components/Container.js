@@ -16,18 +16,21 @@ export default function Container() {
     if (currentPage === "Detail") {
       return <Detail />;
     }
-    return <Login />;
+    return <Login/>;
   };
 
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div>
-      <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
-
-      {renderPage()}
+    <>
+      <div>
+        <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
+      </div>
+      <div>
+        {renderPage()}
+      </div>
 
       {/* <Footer/> */}
-    </div>
+    </>
   );
 }
