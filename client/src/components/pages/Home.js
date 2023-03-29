@@ -3,7 +3,7 @@ import React from "react";
 export default function Home() {
   return (
     <div>
-      <div id="item-grid" className="relative py-20 md:py-24 bg-amber-100">
+      <div id="item-grid" className="mt-auto relative py-20 md:py-24 bg-amber-100">
         <div className="container xl:max-w-6xl mx-auto px-4">
           {/* section header */}
           <header className="text-center mx-auto mb-12">
