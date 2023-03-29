@@ -29,10 +29,10 @@ const resolvers = {
         },
 
         me: async (parent, args, context) => {
-            if (context.user) {
-                return User.findOne({ _id: context.user._id }).populate("messages").populate("listedItems");
+            if (!context.user) {
+                throw new AuthenticationError("You need to be logged in!");
             }
-            throw new AuthenticationError("You need to be logged in!");
+            return User.findOne({ _id: context.user._id }).populate("messages").populate("listedItems");
         },
     },
 
@@ -53,6 +53,32 @@ const resolvers = {
                 const token = signToken(user);
                 return { token, user };
             }
+        },
+
+        addListedItem: async (parent, args, context) => {
+            if (!context.user) {
+                throw new AuthenticationError("You need to be logged in!");
+            }
+
+            const newItem = await ListedItem.create({ args, userID: context.user._id });
+            await User.findByIdAndUpdate(context.user._id, { $push: { listedItems: newItem._id } });
+
+            return newItem;
+        },
+
+        addMessage: async (parent, args, context) => {
+            if (!context.user) {
+                throw new AuthenticationError("You need to be logged in!");
+            }
+
+            const newMessage = await Message.create({ args, userID: context.user._id });
+            await User.findByIdAndUpdate(context.user._id, { $push: { messages: newMessage._id } });
+            await ListedItem.findByIdAndUpdate(newMessage.itemID, {
+                $push: { messages: newMessage._id },
+                returnDocument: "after",
+            });
+
+            return newMessage;
         },
     },
 };
