@@ -5,7 +5,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Detail from "./components/pages/Detail";
-// import Footer from "./components/pages/Footer";
+import Footer from "./components/pages/Footer";
 import Signup from "./components/pages/Signup";
 
 const client = new ApolloClient({
@@ -25,7 +25,7 @@ function App() {
             <Route path="/Detail" element={<Detail />} />
             <Route path="/Signup" element={<Signup />} />
           </Routes>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </Router>
     </ApolloProvider>
