@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { LISTEDITEM } from "../../utils/queries";
+import Modal from "../Modal";
 
 export default function Home() {
   const { data } = useQuery(LISTEDITEM, {
@@ -44,8 +45,8 @@ export default function Home() {
                           <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">
                             {items.title}
                           </h3>
-                          <div className="text-gray-600">
-                            <p className="text-gray-500">Insert Filler Here</p>
+                          <div className= "Home">
+                            <Modal />
                           </div>
                         </div>
                       </div>
