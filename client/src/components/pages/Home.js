@@ -8,7 +8,6 @@ export default function Home() {
   });
 
   const Item = data?.listedItems || [];
-  console.log(Item);
   
   return (
     <div>
@@ -28,9 +27,18 @@ export default function Home() {
             {
               Item.map((items) => {
                 return (
-                  <div className="flex mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
-                    <div className="flex flex-col bg-white rounded overflow-hidden shadow">
-                      <div className="relative overflow-hidden">Image here</div>
+                  <div
+                    className="flex mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6"
+                    key={items._id}
+                  >
+                    <div className="flex flex-col bg-white rounded-xl overflow-hidden shadow-2xl">
+                      <div className="relative overflow-hidden">
+                        <img
+                          className="max-w-full h-auto"
+                          src={items.iconURL}
+                          alt="item"
+                        ></img>
+                      </div>
                       <div className="flex flex-shrink py-6 px-8 flex-1">
                         <div className="mb-2">
                           <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">

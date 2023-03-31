@@ -1,10 +1,11 @@
 import { gql } from "@apollo/client";
 
 export const LISTEDITEM = gql`
-query ListedItems {
-  listedItems {
+  query ListedItems {
+    listedItems {
+    _id
     description
-    title
     iconURL
+    title
   }
 }`;
