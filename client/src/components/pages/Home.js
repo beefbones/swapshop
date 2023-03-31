@@ -1,6 +1,15 @@
 import React from "react";
+import { useQuery } from "@apollo/client";
+import { LISTEDITEM } from "../../utils/queries";
 
 export default function Home() {
+  const { data } = useQuery(LISTEDITEM, {
+    fetchPolicy: "no-cache",
+  });
+
+  const Item = data?.listedItems || [];
+  console.log(Item);
+  
   return (
     <div>
       <div id="item-grid" className="mt-auto relative py-20 md:py-24 bg-amber-100">
@@ -16,149 +25,26 @@ export default function Home() {
                   
           <div className="flex flex-wrap flex-row -mx-4 text-center">
             {/* item */}
-            <div className="flex mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
-              <div className="flex flex-col bg-white rounded overflow-hidden shadow">
-                <div className="relative overflow-hidden">Image here</div>
-                <div className="flex flex-shrink py-6 px-8 flex-1">
-                  <div className="mb-2">
-                    <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">
-                      Insert Item Name Here
-                    </h3>
-                    <div className="text-gray-600">
-                      <p className="text-gray-500">Insert Filler Here</p>
+            {
+              Item.map((items) => {
+                return (
+                  <div className="flex mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
+                    <div className="flex flex-col bg-white rounded overflow-hidden shadow">
+                      <div className="relative overflow-hidden">Image here</div>
+                      <div className="flex flex-shrink py-6 px-8 flex-1">
+                        <div className="mb-2">
+                          <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">
+                            {items.title}
+                          </h3>
+                          <div className="text-gray-600">
+                            <p className="text-gray-500">Insert Filler Here</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            {/* item */}
-            <div className="flex px-4 mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
-              <div className="flex flex-col bg-white  rounded overflow-hidden shadow">
-                <div className="relative overflow-hidden">Image here</div>
-                <div className="flex flex-shrink py-6 px-8 flex-1">
-                  <div className="mb-2">
-                    <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">
-                      Insert Item Name Here
-                    </h3>
-                    <div className="text-gray-600">
-                      <p className="text-gray-500">Insert Filler Here</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* item */}
-            <div className="flex px-4 mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
-              <div className="flex flex-col bg-white  rounded overflow-hidden shadow">
-                <div className="relative overflow-hidden">Image here</div>
-                <div className="flex flex-shrink py-6 px-8 flex-1">
-                  <div className="mb-2">
-                    <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">
-                      Insert Item Name Here
-                    </h3>
-                    <div className="text-gray-600">
-                      <p className="text-gray-500">Insert Filler Here</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* item */}
-            <div className="flex px-4  mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
-              <div className="flex flex-col bg-white  rounded overflow-hidden shadow">
-                <div className="relative overflow-hidden">Image here</div>
-                <div className="flex flex-shrink py-6 px-8 flex-1">
-                  <div className="mb-2">
-                    <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">
-                      Insert Item Name Here
-                    </h3>
-                    <div className="text-gray-600">
-                      <p className="text-gray-500">Insert Filler Here</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* item */}
-            <div className="flex px-4 mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
-              <div className="flex flex-col bg-white  rounded overflow-hidden shadow">
-                <div className="relative overflow-hidden">Image here</div>
-                <div className="flex flex-shrink py-6 px-8 flex-1">
-                  <div className="mb-2">
-                    <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">
-                      Insert Item Name Here
-                    </h3>
-                    <div className="text-gray-600">
-                      <p className="text-gray-500">Insert Filler Here</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* item */}
-            <div className="flex px-4 mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
-              <div className="flex flex-col bg-white  rounded overflow-hidden shadow">
-                <div className="relative overflow-hidden">Image here</div>
-                <div className="flex flex-shrink py-6 px-8 flex-1">
-                  <div className="mb-2">
-                    <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">
-                      Insert Item Name Here
-                    </h3>
-                    <div className="text-gray-600">
-                      <p className="text-gray-500">Insert Filler Here</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* item */}
-            <div className="flex px-4 mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
-              <div className="flex flex-col bg-white  rounded overflow-hidden shadow">
-                <div className="relative overflow-hidden">Image here</div>
-                <div className="flex flex-shrink py-6 px-8 flex-1">
-                  <div className="mb-2">
-                    <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">
-                      Insert Item Name Here
-                    </h3>
-                    <div className="text-gray-600">
-                      <p className="text-gray-500">Insert Filler Here</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* item */}
-            <div className="flex px-4 mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
-              <div className="flex flex-col bg-white  rounded overflow-hidden shadow">
-                <div className="relative overflow-hidden">Image here</div>
-                <div className="flex flex-shrink py-6 px-8 flex-1">
-                  <div className="mb-2">
-                    <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">
-                      Insert Item Name Here
-                    </h3>
-                    <div className="text-gray-600">
-                      <p className="text-gray-500">Insert Filler Here</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* item */}
-            <div className="flex px-4 mb-12 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6">
-              <div className="flex flex-col bg-white  rounded overflow-hidden shadow">
-                <div className="relative overflow-hidden">Image here</div>
-                <div className="flex flex-shrink py-6 px-8 flex-1">
-                  <div className="mb-2">
-                    <h3 className="text-xl leading-normal mb-4 font-bold text-gray-800">
-                      Insert Item Name Here
-                    </h3>
-                    <div className="text-gray-600">
-                      <p className="text-gray-500">Insert Filler Here</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                );
+            })}
           </div>
         </div>
       </div>
