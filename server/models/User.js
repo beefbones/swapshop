@@ -4,8 +4,8 @@ const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
     username: String,
-    password: String,
-    email: String,
+    password: { type: String, minlength: 6 },
+    email: { type: String, match: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g },
     listedItems: [{ type: mongoose.Types.ObjectId, ref: "ListedItem" }],
     messages: [{ type: mongoose.Types.ObjectId, ref: "Message" }],
 });
