@@ -88,7 +88,21 @@ const resolvers = {
                     throw new Error("No item found by that ID!");
                 }
                 return deletedItem;
-            } catch (err) {}
+            } catch (err) {
+                return err;
+            }
+        },
+
+        deleteMessage: async (parent, { _id }) => {
+            try {
+                const deletedMessage = Message.findByIdAndDelete(_id);
+                if (!deletedMessage) {
+                    throw new Error("No message found by that ID!");
+                }
+                return deletedMessage;
+            } catch (err) {
+                return err;
+            }
         },
     },
 };
