@@ -37,6 +37,20 @@ function Navbar({ currentPage }) {
               Messages
             </Link>
           </li>
+
+          <li className="relative">
+            <Link
+              to="/MyShop"
+              className={
+                currentPage === "MyShop"
+                  ? "block py-3 px-4 text-blue-500 hover:text-blue-500 focus:text-blue-500"
+                  : "block py-3 px-4 text-slate-100 hover:text-blue-500 focus:text-blue-500"
+              }
+            >
+              MyShop
+            </Link>
+          </li>
+
           <li className="relative">
             <Link
               to="/Login"
@@ -49,6 +63,7 @@ function Navbar({ currentPage }) {
               Login
             </Link>
           </li>
+
         </ul>
       </nav>
     </div>

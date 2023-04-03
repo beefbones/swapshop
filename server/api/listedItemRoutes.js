@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const cloudinary = require('../utils/cloudinary')
 const { ListedItem } = require("../models");
 
 router.get("/", async (req, res) => {
@@ -17,9 +18,29 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+    const { title, description, createdAt, image } = req.body
+    
     try {
-        const newListedItemData = await ListedItem.create(req.body);
-        res.send(`ListedItem: ${newListedItemData.title} created successfully!`);
+        if(image){
+            const uploadRes = await cloudinary.uploadrer.upload(image, {
+                upload_preset: 'swapshop'
+            })
+            
+            if(uploadRes){
+                const item = newItem({
+                    title,
+                    description,
+                    createdAt,
+                    image: uploadRes
+                })
+
+                const savedItem = await item.save()
+
+                res.status(200).send(savedItem)
+                // const newListedItemData = await ListedItem.create(req.body);
+                // res.send(`ListedItem: ${newListedItemData.title} created successfully!`);
+            }
+        }
     } catch (err) {
         res.status(400).send(`Error: ${err.message}`);
     }
