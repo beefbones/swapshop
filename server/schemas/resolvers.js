@@ -80,6 +80,16 @@ const resolvers = {
 
             return newMessage;
         },
+
+        deleteListedItem: async (parent, { _id }) => {
+            try {
+                const deletedItem = ListedItem.findByIdAndDelete(_id);
+                if (!deletedItem) {
+                    throw new Error("No item found by that ID!");
+                }
+                return deletedItem;
+            } catch (err) {}
+        },
     },
 };
 

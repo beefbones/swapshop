@@ -47,6 +47,7 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         addListedItem(title: String!, description: String!, iconURL: String!): ListedItem
         addMessage(content: String!, itemID: ID!): Message
+        deleteListedItem(_id: ID!): ListedItem
     }
 `;
 
