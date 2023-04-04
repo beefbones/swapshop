@@ -16,36 +16,19 @@ router.get("/", async (req, res) => {
         res.status(400).send(`Error: ${err.message}`);
     }
 });
-/*
+
 router.post("/", async (req, res) => {
-    const { title, description, createdAt, image } = req.body;
-
     try {
-        if (image) {
-            const uploadRes = await cloudinary.uploadrer.upload(image, {
-                upload_preset: "swapshop",
-            });
+        const newListedItemData = await ListedItem.create(req.body);
+        res.send(`ListedItem: ${newListedItemData.title} created successfully!`);
+    }
 
-            if (uploadRes) {
-                const item = newItem({
-                    title,
-                    description,
-                    createdAt,
-                    image: uploadRes,
-                });
-
-                const savedItem = await item.save();
-
-                res.status(200).send(savedItem);
-                // const newListedItemData = await ListedItem.create(req.body);
-                // res.send(`ListedItem: ${newListedItemData.title} created successfully!`);
-            }
-        }
-    } catch (err) {
+    catch (err) {
         res.status(400).send(`Error: ${err.message}`);
     }
 });
-*/
+
+
 router.put("/", async (req, res) => {
     try {
         const updatedListedItem = await ListedItem.findByIdAndUpdate(req.body._id, req.body, { returnDocument: "after" });
