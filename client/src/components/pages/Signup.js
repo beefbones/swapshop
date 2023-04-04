@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
+import Logo from "../../assets/Logo.png";
 
 export default function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -34,11 +35,13 @@ export default function Signup(props) {
   return (
     <div className=''>
             <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-amber-100 ">
-                <div>
+                <div className='sm:rounded-large'>
                     <a href="/">
-                        <h3 className="text-4xl font-bold text-purple-600">
-                            Logo
-                        </h3>
+                       <img
+                          src={Logo}
+                          className="mx-auto w-36 h-auto bg-orange-400 sm:rounded-large "
+                          alt="SwapShop Logo"
+                       ></img>
                     </a>
                 </div>
                 <div className="w-full px-6 py-4 mt-6 bg-orange-400 overflow-hidden shadow-md sm:max-w-md sm:rounded-lg">
@@ -93,12 +96,12 @@ export default function Signup(props) {
                         </div>
                         <div className="flex items-center justify-end mt-4">
                             <Link to='/Login'>
-                            <a
+                            <button
                                 className="text-sm text-gray-600 underline hover:text-gray-900"
-                                href="#"
+                                
                             >
                                 Already registered?
-                            </a>
+                            </button>
                             </Link>
                             <button
                                 type="submit"
