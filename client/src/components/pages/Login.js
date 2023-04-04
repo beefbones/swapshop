@@ -3,11 +3,10 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../../utils/mutations';
 import Auth from '../../utils/auth';
-import Signup from './Signup';
 
 export default function Login({currentPage}) {
     const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error }] = useMutation(LOGIN);
+    const [login] = useMutation(LOGIN);
   
     const handleFormSubmit = async (event) => {
       event.preventDefault();
@@ -17,8 +16,8 @@ export default function Login({currentPage}) {
         });
         const token = mutationResponse.data.login.token;
         Auth.login(token);
-      } catch (error) {
-        console.log(error);
+      } catch (e) {
+        console.log(e);
       }
     };
   
@@ -40,7 +39,7 @@ export default function Login({currentPage}) {
         <img
           src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
           className="w-full"
-          alt="Sample image" />
+          alt="" />
       </div>
       <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
         <form onSubmit={handleFormSubmit}>
