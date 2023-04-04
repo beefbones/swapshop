@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const cloudinary = require('../utils/cloudinary')
+//const cloudinary = require('../utils/cloudinary')
 const { ListedItem } = require("../models");
 
 router.get("/", async (req, res) => {
@@ -16,27 +16,27 @@ router.get("/", async (req, res) => {
         res.status(400).send(`Error: ${err.message}`);
     }
 });
-
+/*
 router.post("/", async (req, res) => {
-    const { title, description, createdAt, image } = req.body
-    
+    const { title, description, createdAt, image } = req.body;
+
     try {
-        if(image){
+        if (image) {
             const uploadRes = await cloudinary.uploadrer.upload(image, {
-                upload_preset: 'swapshop'
-            })
-            
-            if(uploadRes){
+                upload_preset: "swapshop",
+            });
+
+            if (uploadRes) {
                 const item = newItem({
                     title,
                     description,
                     createdAt,
-                    image: uploadRes
-                })
+                    image: uploadRes,
+                });
 
-                const savedItem = await item.save()
+                const savedItem = await item.save();
 
-                res.status(200).send(savedItem)
+                res.status(200).send(savedItem);
                 // const newListedItemData = await ListedItem.create(req.body);
                 // res.send(`ListedItem: ${newListedItemData.title} created successfully!`);
             }
@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
         res.status(400).send(`Error: ${err.message}`);
     }
 });
-
+*/
 router.put("/", async (req, res) => {
     try {
         const updatedListedItem = await ListedItem.findByIdAndUpdate(req.body._id, req.body, { returnDocument: "after" });
