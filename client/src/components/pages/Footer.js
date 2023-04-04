@@ -22,7 +22,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li className="inline-block">
-                    <Link to="/Messages">Messages</Link>
+                    <Link to="/MyShop">My Shop</Link>
                   </li>
                   <li className="inline-block">
                     <Link to="/Login">Login</Link>

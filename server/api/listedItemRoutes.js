@@ -17,17 +17,23 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.post("/", async (req, res) => {
-    try {
-        const newListedItemData = await ListedItem.create(req.body);
-        res.send(`ListedItem: ${newListedItemData.title} created successfully!`);
-    }
+router.post("/", async(req, body) => {
+    const Title = req.body.title
+    const IconURL = req.body.iconURL
+    const Description = req.body.description
 
-    catch (err) {
-        res.status(400).send(`Error: ${err.message}`);
-    }
-});
+    const formData = new ListedItem({
+        title: Title,
+        iconURL: IconURL,
+        description: Description
+    })
 
+    try{
+        await formData.save()
+    } catch(err) {
+        console.log(err)
+    }
+})
 
 router.put("/", async (req, res) => {
     try {

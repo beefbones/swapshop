@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { LISTEDITEM } from "../../utils/queries";
+import AddItem from "./AddItem";
 
 
 export default function MyShop() {
@@ -13,7 +14,7 @@ export default function MyShop() {
   return (
     <div>
       <div
-        className="py-20 pl-10 bg-amber-100"
+        className="pt-20 pl-10 bg-amber-100"
       >
         <div className="text-xl pt-5 mb-4 font-bold text-gray-800">My items</div>
         <div className="container xl:max-w-6xl px-4">
@@ -44,34 +45,8 @@ export default function MyShop() {
             })}
           </div>
         </div>
-
-        <div className="text-xl pt-5 mb-4 font-bold text-gray-800">Add item</div>
-        <section class="max-w-4xl p-6 bg-white rounded-md border border-gray-300 shadow-xl">
-          <form>
-            <div class="grid grid-cols-2 gap-6 mt-4">
-              <div>
-                <label class="text-gray-700" for="username">Title</label>
-                <input id="username" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
-              </div>
-
-              <div>
-                <label class="text-gray-700" for="imageURL">Image Url</label>
-                <input id="iconURL" type="text" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
-              </div>
-            </div>
-
-            <div class="pt-3">
-              <label for="Description" class="text-gray-700">Description</label>
-              <textarea class="block mt-2 w-full  rounded-lg border border-gray-200 bg-white px-4 h-32 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"></textarea>
-            </div>
-
-            <div class="flex justify-end mt-6">
-              <button class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
-            </div>
-          </form>
-        </section>
       </div>
-
+      <AddItem />
     </div>
   );
 }

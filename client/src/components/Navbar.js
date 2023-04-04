@@ -10,12 +10,12 @@ function Navbar({ currentPage }) {
     <div className="text-xl nav-top fixed flex flex-nowrap lg:flex-start items-center z-20 top-0 left-0 right-0 overflow-y-auto max-h-screen lg:overflow-visible lg:max-h-full bg-orange-400">
         <img
           src={Logo}
-          className="mx-auto w-36 h-auto"
+          className="mx-auto w-40 h-auto ml-5"
           alt="SwapShop Logo"
         ></img>
       
       <nav className="container mx-auto px-4 xl:max-w-6xl ">
-        <ul className="flex flex-row justify-between py-3">
+        <ul className="flex flex-row justify-end py-3">
           <li className="relative">
             <Link
               to="/"
@@ -38,7 +38,7 @@ function Navbar({ currentPage }) {
                   : "block py-3 px-4 text-slate-100 hover:text-blue-500 focus:text-blue-500"
               }
             >
-              MyShop
+              My Shop
             </Link>
           </li>
 
