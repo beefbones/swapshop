@@ -1,6 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Message, ListedItem } = require("../models");
 const { signToken } = require("../utils/auth");
+const listedItem = require("../models/ListedItem");
 
 const resolvers = {
     Query: {
@@ -20,12 +21,15 @@ const resolvers = {
             return Message.findById(_id);
         },
 
-        listedItems: async (_, __, user) => {
-            if (!user){ return ListedItem.find(); }
-            const userData = User.findById(user.id).populate(listedItems)
-            return{userData.listedItems}
-            
+        listedItems: async () => {
+            return listedItem.find()
         },
+
+        // listedItems: async (_, __, user) => {
+        //     if (!user){ return ListedItem.find(); }
+        //     const userData = User.findById(user.id).populate(listedItems)
+        //     return{userData.listedItems}            
+        // },
 
         listedItem: async (parent, { _id }) => {
             return ListedItem.findById(_id);
