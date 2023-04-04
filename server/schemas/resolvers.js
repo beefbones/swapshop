@@ -20,8 +20,11 @@ const resolvers = {
             return Message.findById(_id);
         },
 
-        listedItems: async () => {
-            return ListedItem.find();
+        listedItems: async (_, __, user) => {
+            if (!user){ return ListedItem.find(); }
+            const userData = User.findById(user.id).populate(listedItems)
+            return{userData.listedItems}
+            
         },
 
         listedItem: async (parent, { _id }) => {
