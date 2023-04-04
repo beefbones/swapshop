@@ -1,6 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
+import { LOGIN } from '../../utils/mutations';
+import Auth from '../../utils/auth';
+import Signup from './Signup';
 
-export default function Login() {
+export default function Login({currentPage}) {
+    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [login, { error }] = useMutation(LOGIN);
+  
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+      try {
+        const mutationResponse = await login({
+          variables: { email: formState.email, password: formState.password },
+        });
+        const token = mutationResponse.data.login.token;
+        Auth.login(token);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    };
+
     return(
 <section className="h-screen bg-amber-100">
   <div className="h-full">
@@ -14,7 +43,7 @@ export default function Login() {
           alt="Sample image" />
       </div>
       <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <div
             className="flex flex-row items-center justify-center lg:justify-start">
             <p className="mb-0 mr-4 text-lg">Sign in with</p>
@@ -75,15 +104,15 @@ export default function Login() {
             </p>
           </div>
 
-          
           <div className="relative mb-6" data-te-input-wrapper-init>
             <input
+              onChange={handleChange}
               type="text"
-              className="peer block min-h-[auto] w-full bg-orange-400 rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              className="peer block min-h-[auto] w-full bg-orange-400 rounded border-0 py-[0.32rem] px-3 leading-[2.15] outline-none text-white transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
               id="exampleFormControlInput2"
               placeholder="Email address" />
             <label
-              for="exampleFormControlInput2"
+              htmlFor="exampleFormControlInput2"
               className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
               >Email address
             </label>
@@ -92,12 +121,13 @@ export default function Login() {
           
           <div className="relative mb-6" data-te-input-wrapper-init>
             <input
+              onChange={handleChange}
               type="password"
-              className="peer block min-h-[auto] w-full bg-orange-400 rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              className="peer block min-h-[auto] w-full bg-orange-400 rounded border-0 py-[0.32rem] px-3 leading-[2.15] outline-none text-white transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
               id="exampleFormControlInput22"
               placeholder="Password" />
             <label
-              for="exampleFormControlInput22"
+              htmlFor="exampleFormControlInput22"
               className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
               >Password
             </label>
@@ -112,7 +142,7 @@ export default function Login() {
                 id="exampleCheck2" />
               <label
                 className="inline-block pl-[0.15rem] hover:cursor-pointer"
-                for="exampleCheck2">
+                htmlFor="exampleCheck2">
                 Remember me
               </label>
             </div>
@@ -129,13 +159,16 @@ export default function Login() {
             </button>
             <p className="mt-2 mb-2 pt-1 text-sm font-semibold">
               Don't have an account?
+              <Link to="/Signup">
               <button
                       type="button"
+                      href='/Signup'
                       className="inline-block mx-2 bg-orange-400 rounded border-2 border-danger px-6 pt-2 pb-[6px] text-xs font-medium uppercase leading-normal text-white text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
                       data-te-ripple-init
                       data-te-ripple-color="light">
                       Register
                     </button>
+                    </Link>
             </p>
           </div>
         </form>
