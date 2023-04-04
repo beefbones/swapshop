@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
+// import Auth from "../services/AuthService";
+
+
+
 function Navbar({ currentPage }) {
   return (
     <div className="text-xl nav-top fixed flex flex-nowrap lg:flex-start items-center z-20 top-0 left-0 right-0 overflow-y-auto max-h-screen lg:overflow-visible lg:max-h-full bg-orange-400">
@@ -22,19 +26,6 @@ function Navbar({ currentPage }) {
               }
             >
               Home
-            </Link>
-          </li>
-
-          <li className="relative">
-            <Link
-              to="/Messages"
-              className={
-                currentPage === "Messages"
-                  ? "block py-3 px-4 text-blue-500 hover:text-blue-500 focus:text-blue-500"
-                  : "block py-3 px-4 text-slate-100 hover:text-blue-500 focus:text-blue-500"
-              }
-            >
-              Messages
             </Link>
           </li>
 

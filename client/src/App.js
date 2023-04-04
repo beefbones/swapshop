@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
-// import Detail from "./components/pages/Detail";
 import Footer from "./components/pages/Footer";
 import Signup from "./components/pages/Signup";
 import MyShop from "./components/pages/MyShop";
@@ -23,8 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/MyShop" element={<MyShop />}/>
-            <Route path="/Login" element={<Login />} />
-            {/* <Route path="/Detail" element={<Detail />} /> */}
+            <Route path="/Login" element={<Login />} />         
             <Route path="/Signup" element={<Signup />} />
           </Routes>
           <Footer />

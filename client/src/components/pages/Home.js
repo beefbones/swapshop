@@ -2,7 +2,6 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { LISTEDITEM } from "../../utils/queries";
 
-
 export default function Home() {
   const { data } = useQuery(LISTEDITEM, {
     fetchPolicy: "no-cache",
@@ -10,9 +9,10 @@ export default function Home() {
 
   const Item = data?.listedItems || [];
 
+
+
   const [showModal, setShowModal] = React.useState(false);
   const [modalData, setModalData] = React.useState(null);
-
 
   return (
     <div>
@@ -91,7 +91,12 @@ export default function Home() {
                                       </p>
                                     </div>
                                     {/*footer*/}
-                                    <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                                    <div className="flex items-center justify-around p-6 border-t border-solid border-slate-200 rounded-b">
+                                      <div>
+                                        <h3>
+                                          Contact Seller: {modalData.userEmail}
+                                        </h3>
+                                      </div>
                                       <button
                                         className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                         type="button"
