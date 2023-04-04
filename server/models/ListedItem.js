@@ -7,6 +7,7 @@ const listedItemSchema = new Schema({
     description: String,
     createdAt: { type: Date, default: Date.now },
     messages: [{ type: mongoose.Types.ObjectId, ref: "Message" }],
+    userEmail: String,
 });
 
 const listedItem = mongoose.model("ListedItem", listedItemSchema);
