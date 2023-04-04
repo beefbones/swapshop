@@ -13,17 +13,17 @@ export default function MyShop() {
 
   return (
     <div>
+      <div className="text-xl pl-10 pt-28 font-bold text-gray-800 bg-amber-100">My items</div>
       <div
-        className="pt-20 pl-10 bg-amber-100"
+        className="flex bg-amber-100 justify-center"
       >
-        <div className="text-xl pt-5 mb-4 font-bold text-gray-800">My items</div>
-        <div className="container xl:max-w-6xl px-4">
+        <div className="container xl:max-w-6xl pt-10">
           <div className="flex flex-wrap flex-row -mx-4 text-center">
             {/* item */}
             {Item.map((items) => {
               return (
                 <div
-                  className="flex mb-12 px-4 sm:w-1/3 lg:w-1/6 lg:px-6"
+                  className="flex mb-12 px-4 sm:w-1/3 lg:w-1/5 lg:px-6"
                   key={items._id}
                 >
                   <div className="flex flex-col bg-white rounded-xl overflow-hidden shadow-2xl">
