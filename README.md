@@ -20,11 +20,11 @@
     So that I get rid of unused/unwanted items for new ones
 
 
-![Hydro Home Screenshot](./client/src/assets/swapshop-screenshot%20.png)
+![SwapShop Screenshot](./client/src/assets/swapshop-screenshot%20.png)
 
 
   ## Installation
-  First, git clone the repository to your local system. Then, run CLI and run npm install to install all dependencies. Finally, run npm develop.
+  First, git clone the repository to your local system. Then, run CLI and run npm install to install all dependencies. Finally, run npm run develop.
 
 
   ## Usage
