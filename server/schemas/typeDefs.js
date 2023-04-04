@@ -49,6 +49,8 @@ const typeDefs = gql`
         addMessage(content: String!, itemID: ID!): Message
         deleteListedItem(_id: ID!): ListedItem
         deleteMessage(_id: ID!): Message
+        updateListedItem(_id: ID!, title: String, description: String, iconURL: String): ListedItem
+        updateMessage(_id: ID!, content: String!, itemID: ID!): Message
     }
 `;
 
