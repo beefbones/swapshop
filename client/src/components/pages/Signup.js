@@ -55,9 +55,10 @@ export default function Signup(props) {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    name="username"
+                                    value={formState.username}
                                     onChange={handleChange}
                                     type="text"
-                                    name="name"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 />
                             </div>
@@ -71,9 +72,10 @@ export default function Signup(props) {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    name="email"
+                                    value={formState.email}
                                     onChange={handleChange}
                                     type="email"
-                                    name="email"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 />
                             </div>
@@ -87,9 +89,10 @@ export default function Signup(props) {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                    name="password"
+                                    value={formState.password}
                                     onChange={handleChange}
                                     type="password"
-                                    name="password"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 />
                             </div>
