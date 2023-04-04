@@ -25,6 +25,7 @@ const typeDefs = gql`
         description: String
         createdAt: Int
         messages: [Message]
+        userEmail: String
     }
 
     type Auth {
