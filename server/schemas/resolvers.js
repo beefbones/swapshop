@@ -80,6 +80,42 @@ const resolvers = {
 
             return newMessage;
         },
+
+        deleteListedItem: async (parent, { _id }) => {
+            try {
+                const deletedItem = await ListedItem.findByIdAndDelete(_id);
+                if (!deletedItem) {
+                    throw new Error("No item found by that ID!");
+                }
+                return deletedItem;
+            } catch (err) {
+                return err;
+            }
+        },
+
+        deleteMessage: async (parent, { _id }) => {
+            try {
+                const deletedMessage = await Message.findByIdAndDelete(_id);
+                if (!deletedMessage) {
+                    throw new Error("No message found by that ID!");
+                }
+                return deletedMessage;
+            } catch (err) {
+                return err;
+            }
+        },
+
+        updateListedItem: async (parent, args) => {
+            try {
+                const updatedItem = await ListedItem.findByIdAndUpdate(args._id, args, { returnDocument: "after" });
+                if (!updatedItem) {
+                    throw new Error("No item found by that ID!");
+                }
+                return updatedItem;
+            } catch (err) {
+                return err;
+            }
+        },
     },
 };
 

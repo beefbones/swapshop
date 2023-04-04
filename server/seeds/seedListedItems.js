@@ -10,6 +10,7 @@ const listedItemData = [
             "Bounght this blender thinking it was going to change my life. Spoiler alert...it didn't. I barely use it and feel guilty having it. Only used 5-6 times, so it's still in great condition. Maybe this is what YOU need to get your life together?!",
         createdAt: new Date(2023, 2, 22, 10, 15, 2, 2),
         messages: ["642223c56a1c709f2408c753"],
+        userEmail: "joenotexotic@gmail.com",
     },
     {
         _id: "6422243fcab6893c93fc6bbe",
@@ -20,6 +21,7 @@ const listedItemData = [
             "Black high top Converse (men's size 10). Classic and iconic shoe style that features a black canvas upper with white rubber toe caps and soles. Versatile and can be dressed up or down for a any occasions.",
         createdAt: new Date(2023, 2, 18, 19, 15, 8, 2),
         messages: ["642223d230dc7414bffa17b5"],
+        userEmail: "emailisevil@gmail.com",
     },
     {
         _id: "642224479dcc661bab95748b",
@@ -29,6 +31,7 @@ const listedItemData = [
         description: "Women's jean shorts (size 4) up for grabs. Too small for me, so I'm looking to rehome them.",
         createdAt: new Date(2023, 1, 28, 6, 8, 2, 8),
         messages: ["642223dac58858e7be01797a"],
+        userEmail: "alangarnerh@gmail.com",
     },
     {
         _id: "6422244f146ccda633fd22af",
@@ -39,6 +42,7 @@ const listedItemData = [
             "Brown leather satchel (not a purse) in near perfect condition. Used one night then never again. Plenty of pockets for all your storage needs.",
         createdAt: new Date(2023, 2, 22, 10, 15, 2, 2),
         messages: ["642223e43ffc5930f7f20f07"],
+        userEmail: "alangarnerh@gmail.com",
     },
     {
         _id: "642224559bbf5dce07463d21",
@@ -49,6 +53,7 @@ const listedItemData = [
             "Only used a few times when I realized I needed something with more power to vacuum the whole house. This is perfect for small rooms!",
         createdAt: new Date(2023, 2, 26, 22, 5, 4, 6),
         messages: [],
+        userEmail: "emailisevil@gmail.com",
     },
     {
         _id: "6422245f14592e7ce6712d55",
@@ -58,6 +63,7 @@ const listedItemData = [
         description: "Nothing wrong with the item. Just looking to change up my style by swapping for new pieces.",
         createdAt: new Date(2023, 2, 17, 2, 8, 5, 5),
         messages: [],
+        userEmail: "pawneegoddess@gmail.com",
     },
     {
         _id: "6422246c7e68f74130a53178",
@@ -67,6 +73,7 @@ const listedItemData = [
         description: "Perfect dainty gold necklace for every day wear. Goes with a lot of outfits.",
         createdAt: new Date(2023, 2, 5, 16, 15, 8, 2),
         messages: [],
+        userEmail: "joenotexotic@gmail.com",
     },
     {
         _id: "6422247439477da7872fa584",
@@ -76,6 +83,7 @@ const listedItemData = [
         description: "Men's large white t-shirt. Shrunk in the dryer, so it fits more like a medium.",
         createdAt: new Date(2023, 2, 6, 18, 4, 4, 4),
         messages: [],
+        userEmail: "joenotexotic@gmail.com",
     },
     {
         _id: "6422247b26f43f6bfc237de8",
@@ -85,6 +93,7 @@ const listedItemData = [
         description: "Gently used iPhone 13 pro phone case. Some discoloration on the edges, but otherwise in good shape.",
         createdAt: new Date(2023, 1, 14, 18, 10, 3, 2),
         messages: [],
+        userEmail: "pawneegoddess@gmail.com",
     },
     {
         _id: "64222484eab882fce3978d3c",
@@ -95,6 +104,7 @@ const listedItemData = [
             "Two piece luggage set. One medium and one small rolling suitcase in excellent coniditon. Just not travelling as much as we used to, so they are rarely used anymore.",
         createdAt: new Date(2023, 1, 22, 12, 15, 8, 8),
         messages: [],
+        userEmail: "nothisispatrick@gmail.com",
     },
     {
         _id: "6422248c27938db3fde43e24",
@@ -104,6 +114,7 @@ const listedItemData = [
         description: "Coffe maker available. Still in perfect condition. Upgraded to a single serve machine and need this one off the counter.",
         createdAt: new Date(2023, 1, 20, 9, 10, 6, 3),
         messages: ["642223d230dc7414bffa17b5"],
+        userEmail: "pawneegoddess",
     },
     {
         _id: "642224948f7bb879f1fd7c5d",
@@ -114,6 +125,7 @@ const listedItemData = [
             "3rd generation echo dot available. Not new, but practiclaly never used. We unplugged it once we found oud it was listening to us and now it's just collecting dust.",
         createdAt: new Date(2023, 2, 13, 18, 15, 7, 7),
         messages: [],
+        userEmail: "nothisispatrick@gmail.com",
     },
 ];
 
